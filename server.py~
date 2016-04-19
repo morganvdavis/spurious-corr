@@ -29,7 +29,7 @@ def index ():
 
 @app.route('/movies/<movie_name>')
 def get_movies (movie_name):
-    m = Movie(movie_name, 5, 5)
+    m = movie(movie_name, 5, 5)
     db.session.add(m)
     db.session.commit()
     return jsonify({'success': True})
